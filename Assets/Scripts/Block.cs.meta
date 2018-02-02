@@ -1,12 +1,11 @@
 fileFormatVersion: 2
-guid: 9861379db8cc4483f911ff465b71f0c8
-timeCreated: 1517584824
+guid: 3a8c21b0237494cfbb622b5c485881f9
+timeCreated: 1517583805
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - grass_prefab: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
