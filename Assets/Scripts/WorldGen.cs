@@ -8,6 +8,7 @@ public class WorldGen : MonoBehaviour {
 	public GameObject dirt_prefab;
 	
 	public float blockSize;
+	public float holeChance;
 	public int playingfieldsize_x, playingfieldsize_y;
 	void Start () {
 		// Define Block Array
@@ -18,16 +19,19 @@ public class WorldGen : MonoBehaviour {
 		for(int x = 0;x<playingfieldsize_x-1;x++){
 			for(int y = 0;y<playingfieldsize_y-1;y++){
 				bl[x,y] = new Block();
-				if(y == 23) bl[x,y].setType(0);
-				else bl[x,y].setType(1);
-				
+				if(y == 23) bl[x,y].setType(1);
+				else {
+					if(Random.value <= holeChance) bl[x,y].setType(0);
+					else bl[x,y].setType(2);
+				}
 			}
 		}
 		
 		// Instantiate blocks
 		for(int x = 0;x<playingfieldsize_x-1;x++){
 			for(int y = 0;y<playingfieldsize_y-1;y++){
-				if(bl[x,y].getType() == 0) MonoBehaviour.Instantiate(grass_prefab,new Vector3(x*blockSize,y*blockSize,1),new Quaternion(0,0,0,0));
+				if(bl[x,y].getType() == 1) MonoBehaviour.Instantiate(grass_prefab,new Vector3(x*blockSize,y*blockSize,1),new Quaternion(0,0,0,0));
+				else if(bl[x,y].getType() == 0) ; // do fuck all;
 				else MonoBehaviour.Instantiate(dirt_prefab,new Vector3(x*blockSize,y*blockSize,1),new Quaternion(0,0,0,0));
 			}
 		}
