@@ -10,30 +10,27 @@ public class WorldGen : MonoBehaviour {
 	public float blockSize;
 	public int playingfieldsize_x, playingfieldsize_y;
 	void Start () {
-
+		// Define Block Array
 		Block[,] bl = new Block[playingfieldsize_x, playingfieldsize_y];
 		Debug.Log(bl.Length);
 
-
+		// Generate World
 		for(int x = 0;x<playingfieldsize_x-1;x++){
 			for(int y = 0;y<playingfieldsize_y-1;y++){
 				bl[x,y] = new Block();
-				bl[x,y].setType(1);
+				if(y == 23) bl[x,y].setType(0);
+				else bl[x,y].setType(1);
+				
 			}
 		}
-			//bl[0,i].setType(0);
 		
+		// Instantiate blocks
 		for(int x = 0;x<playingfieldsize_x-1;x++){
 			for(int y = 0;y<playingfieldsize_y-1;y++){
-				if(y == 23) MonoBehaviour.Instantiate(grass_prefab,new Vector3(x*blockSize,y*blockSize,1),new Quaternion(0,0,0,0));
+				if(bl[x,y].getType() == 0) MonoBehaviour.Instantiate(grass_prefab,new Vector3(x*blockSize,y*blockSize,1),new Quaternion(0,0,0,0));
 				else MonoBehaviour.Instantiate(dirt_prefab,new Vector3(x*blockSize,y*blockSize,1),new Quaternion(0,0,0,0));
 			}
 		}
-		
-
-
-		
-
 
 	}
 	
