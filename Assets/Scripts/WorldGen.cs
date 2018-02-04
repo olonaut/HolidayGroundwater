@@ -34,7 +34,6 @@ public class WorldGen : MonoBehaviour {
 				else MonoBehaviour.Instantiate(dirt_prefab,new Vector3(x*blockSize,y*blockSize,1),new Quaternion(0,0,0,0));
 			}
 		}
-
 	}
 	
 	// Update is called once per frame

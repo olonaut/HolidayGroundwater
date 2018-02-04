@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Block.cs" />
      <Compile Include="Assets\Scripts\WorldGen.cs" />
+     <None Include="Assets\doc\blocktypes.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/home/theo/Unity-2017.3.0p2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

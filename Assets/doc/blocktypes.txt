@@ -1,0 +1,6 @@
+0   -   empty
+1   -   grass
+2   -   dirt
+3   -   dirtStone1
+4   -   dirtStone2
+5   -   dirtStone3
