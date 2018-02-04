@@ -12,7 +12,7 @@ public class WorldGen : MonoBehaviour {
 	public int playingfieldsize_x, playingfieldsize_y;
 	void Start () {
 	    // TODO REMOVE THIS BEFORE RELEASE
-		UnityEditor.SceneView.FocusWindowIfItsOpen(typeof(UnityEditor.SceneView));
+		// UnityEditor.SceneView.FocusWindowIfItsOpen(typeof(UnityEditor.SceneView));
 
 		// Define Block Array
 		Block[,] bl = new Block[playingfieldsize_x, playingfieldsize_y];
