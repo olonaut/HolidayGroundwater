@@ -31,7 +31,6 @@ public class WorldGen : MonoBehaviour {
 		for(int x = 0;x<playingfieldsize_x-1;x++){
 			for(int y = 0;y<playingfieldsize_y-1;y++){
 				if(bl[x,y].getType() == 1) MonoBehaviour.Instantiate(grass_prefab,new Vector3(x*blockSize,y*blockSize,1),new Quaternion(0,0,0,0));
-				else if(bl[x,y].getType() == 0) ; // do fuck all;
 				else MonoBehaviour.Instantiate(dirt_prefab,new Vector3(x*blockSize,y*blockSize,1),new Quaternion(0,0,0,0));
 			}
 		}
