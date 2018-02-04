@@ -349,9 +349,9 @@ MonoBehaviour:
   dirt_prefab: {fileID: 1832477053274868, guid: 8ca679c4f81fe4ab08b2f1d725ebc1a1,
     type: 2}
   blockSize: 1.281
-  holeChance: 0.15
-  playingfieldsize_x: 25
-  playingfieldsize_y: 25
+  holeChance: 0.085
+  playingfieldsize_x: 50
+  playingfieldsize_y: 50
 --- !u!4 &622206193
 Transform:
   m_ObjectHideFlags: 0
