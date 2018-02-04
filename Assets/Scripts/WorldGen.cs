@@ -22,7 +22,7 @@ public class WorldGen : MonoBehaviour {
 		for(int x = 0;x<playingfieldsize_x-1;x++){
 			for(int y = 0;y<playingfieldsize_y-1;y++){
 				bl[x,y] = new Block();
-				if(y == 23) bl[x,y].setType(1);
+				if(y == playingfieldsize_y-2) bl[x,y].setType(1);
 				else{
 					if(Random.value <= holeChance && x != 0 && x != 23 && y != 0) bl[x,y].setType(0);
 					else bl[x,y].setType(2);
