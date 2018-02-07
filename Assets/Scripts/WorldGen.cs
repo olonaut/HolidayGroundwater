@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class WorldGen : MonoBehaviour {
 
-	public GameObject grass_prefab, rudi_prefab;
-	public GameObject dirt_prefab;
+	public GameObject grass_prefab, rudi_prefab, dirt_prefab;
 	
 	public float blockSize;
 	public float holeChance;
