@@ -4,3 +4,4 @@
 3   -   dirtStone1
 4   -   dirtStone2
 5   -   dirtStone3
+6   -   rudi

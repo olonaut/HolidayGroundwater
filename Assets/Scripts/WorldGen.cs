@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WorldGen : MonoBehaviour {
 
-	public GameObject grass_prefab;
+	public GameObject grass_prefab, rudi_prefab;
 	public GameObject dirt_prefab;
 	
 	public float blockSize;
@@ -29,12 +29,16 @@ public class WorldGen : MonoBehaviour {
 				}
 			}
 		}
+
+		// Place Rudi
+		bl[Random.Range(0,playingfieldsize_x),Random.Range(5,playingfieldsize_y)].setType(6);
 		
 		// Instantiate blocks
 		for(int x = 0;x<playingfieldsize_x-1;x++){
 			for(int y = 0;y<playingfieldsize_y-1;y++){
 				if(bl[x,y].getType() == 1) MonoBehaviour.Instantiate(grass_prefab,new Vector3(x*blockSize,y*blockSize,1),new Quaternion(0,0,0,0));
 				else if(bl[x,y].getType() == 0 ) ;
+				else if(bl[x,y].getType() == 6 ) MonoBehaviour.Instantiate(rudi_prefab,new Vector3(x*blockSize,y*blockSize,1),new Quaternion(0,0,0,0));
 				else MonoBehaviour.Instantiate(dirt_prefab,new Vector3(x*blockSize,y*blockSize,1),new Quaternion(0,0,0,0));
 			}
 		}

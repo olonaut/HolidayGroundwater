@@ -1,1 +1,4 @@
-Ÿ_f#Hv@ûÄ-´ŞxL¶©°°ÉøÖ{EŸî•L¶©°°ÉøÖ{EŸî•L¶©°°ÉøÖ{EŸî•L¶©°°Éø
+sceneSetups:
+- path: Assets/StartScene.unity
+  isLoaded: 1
+  isActive: 1

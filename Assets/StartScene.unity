@@ -500,6 +500,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grass_prefab: {fileID: 1126286956730230, guid: 83a7203ba29194141a742107b71922f6,
     type: 2}
+  rudi_prefab: {fileID: 1566204082224688, guid: f699355b883fa4033984c49ba04d0aee,
+    type: 2}
   dirt_prefab: {fileID: 1832477053274868, guid: 8ca679c4f81fe4ab08b2f1d725ebc1a1,
     type: 2}
   blockSize: 1.281
