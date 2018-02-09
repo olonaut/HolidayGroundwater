@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour {
 			r.velocity = new Vector2(r.velocity.x, 15);
 			isJumpLocked = true;
 		}
+
+		if(Input.GetButton("Fire")){
+			// IDFK
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other){

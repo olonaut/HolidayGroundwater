@@ -530,8 +530,12 @@ MonoBehaviour:
     type: 2}
   dirt_prefab: {fileID: 1832477053274868, guid: 8ca679c4f81fe4ab08b2f1d725ebc1a1,
     type: 2}
+  dirtRock01_prefab: {fileID: 1031588898193648, guid: 6849c9b99add54d46bd4f311601c254b,
+    type: 2}
   blockSize: 1.281
   holeChance: 0.085
+  rockChance: 5
+  rockMultiplyer: 3
   playingfieldsize_x: 50
   playingfieldsize_y: 50
 --- !u!4 &622206193
