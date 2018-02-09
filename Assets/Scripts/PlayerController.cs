@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,15 +27,22 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if(Input.GetButton("Fire")){
-			// IDFK
+			if(Input.GetAxis("Vertical") < 0 ){
+				destoryBlockDown();
+			}
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
+    void OnTriggerEnter2D(Collider2D other){
 		Debug.Log("I just collided with " + other.ToString() + ". Fuck!");
 		if(other.gameObject.CompareTag("JumpSurface")){
 			isJumpLocked = false;
 		}
 	}
+
+    private void destoryBlockDown()
+    {
+        throw new NotImplementedException();
+    }
 
 }
