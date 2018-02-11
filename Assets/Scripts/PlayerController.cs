@@ -8,9 +8,7 @@ public class PlayerController : MonoBehaviour {
 	public float speed;
 	public float maxSpeed;
 	private Rigidbody2D r;
-	
-	// Lock jump to prevent spam. 
-	private bool isJumpLocked = false; 
+	private bool isJumpLocked = false; // Lock jump to prevent spam. 
 
 	void Start () {
 		r = GetComponent<Rigidbody2D>();
@@ -26,7 +24,7 @@ public class PlayerController : MonoBehaviour {
 			isJumpLocked = true;
 		}
 
-		if(Input.GetButton("Fire")){
+		if(Input.GetButton("Fire1")){
 			if(Input.GetAxis("Vertical") < 0 ){
 				destoryBlockDown();
 			}
