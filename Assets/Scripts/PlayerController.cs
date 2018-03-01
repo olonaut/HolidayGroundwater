@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
     void OnTriggerEnter2D(Collider2D other){
-		Debug.Log("I just collided with " + other.ToString() + ". Fuck!");
+		Debug.Log("I just collided with " + other.ToString());
 		if(other.gameObject.CompareTag("JumpSurface")){
 			isJumpLocked = false;
 		}
