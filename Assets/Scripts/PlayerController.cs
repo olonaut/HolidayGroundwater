@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public float maxSpeed;
 	private Rigidbody2D r;
 	private bool isJumpLocked = false; // Lock jump to prevent spam. 
+	public BoxCollider2D digDownPosition;
 
 	void Start () {
 		r = GetComponent<Rigidbody2D>();
