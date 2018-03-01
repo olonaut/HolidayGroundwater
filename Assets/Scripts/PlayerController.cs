@@ -41,7 +41,9 @@ public class PlayerController : MonoBehaviour {
 
     private void destoryBlockDown()
     {
-        throw new NotImplementedException();
+        Collider2D[] colliders = new Collider2D[50];
+		digDownPosition.GetContacts(colliders);
+		colliders[0].gameObject.SetActive(false);
     }
 
 }
