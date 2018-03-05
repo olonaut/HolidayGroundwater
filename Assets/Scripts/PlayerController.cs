@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
 	public float maxSpeed;
 	private Rigidbody2D r;
 	private bool isJumpLocked = false; // Lock jump to prevent spam. 
-	public BoxCollider2D digDownPosition;
+	public BoxCollider2D digDownPosition, digLeftPosition, digRightPosition;
 
 	void Start () {
 		r = GetComponent<Rigidbody2D>();
@@ -29,6 +29,13 @@ public class PlayerController : MonoBehaviour {
 			if(Input.GetAxis("Vertical") < 0 ){
 				destoryBlockDown();
 			}
+			else if(Input.GetAxis("Horizontal") > 0){
+				destoryBlockLeft();
+			}
+			else if(Input.GetAxis("Horizontal") < 0){
+				destoryBlockRight();
+			}
+			
 		}
 	}
 
@@ -41,8 +48,22 @@ public class PlayerController : MonoBehaviour {
 
     private void destoryBlockDown()
     {
-        Collider2D[] colliders = new Collider2D[50];
+        Collider2D[] colliders = new Collider2D[10];
 		digDownPosition.GetContacts(colliders);
+		colliders[0].gameObject.SetActive(false);
+    }
+
+	private void destoryBlockLeft()
+    {
+        Collider2D[] colliders = new Collider2D[10];
+		digLeftPosition.GetContacts(colliders);
+		colliders[0].gameObject.SetActive(false);
+    }
+
+	private void destoryBlockRight()
+    {
+        Collider2D[] colliders = new Collider2D[10];
+		digRightPosition.GetContacts(colliders);
 		colliders[0].gameObject.SetActive(false);
     }
 

@@ -1,7 +1,9 @@
-0   -   empty
-1   -   grass
-2   -   dirt
-3   -   dirtStone1
-4   -   dirtStone2
-5   -   dirtStone3
-6   -   rudi
+NUM     -   NAME        -   DIGTIME
+
+0       -   empty       -   NONE
+1       -   grass       -   0.3
+2       -   dirt        -   0.25
+3       -   dirtStone1  -   0.45
+4       -   dirtStone2  -   0.65
+5       -   dirtStone3  -   0.85
+6       -   rudi        -   0

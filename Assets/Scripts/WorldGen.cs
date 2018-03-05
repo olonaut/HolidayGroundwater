@@ -22,11 +22,20 @@ public class WorldGen : MonoBehaviour {
 				bl[x,y] = new Block(); // Init block
 				if(y == playingfieldsize_y-2) bl[x,y].setType(1); //Top is grass
 				else{
-					if(Random.value <= holeChance && x != 0 && x != playingfieldsize_x-2 && y != 0) bl[x,y].setType(0); // If there is a hole, set type to 1
+					if(Random.value <= holeChance && x != 0 && x != playingfieldsize_x-2 && y != 0)
+					{
+						bl[x,y].setType(0); // If there is a hole, set type to 1
+						bl[x,y].setDigtime((float)0.3);
+					}
 					if(Random.Range(0,rockMultiplyer)*playingfieldsize_x <= rockChance){
 						bl[x,y].setType(3);
+						bl[x,y].setDigtime((float)0.45);
 					}
-					else bl[x,y].setType(2); //Set everything else to 2
+					else
+					{ 
+						bl[x,y].setType(2); //Set everything else to 2 
+						bl[x,y].setDigtime((float)0.25);
+					}
 				}
 			}
 		}
