@@ -8,8 +8,9 @@ public class PlayerController : MonoBehaviour {
 	public float speed;
 	public float maxSpeed;
 	private Rigidbody2D r;
-	private bool isJumpLocked = false; // Lock jump to prevent spam. 
-	public BoxCollider2D digDownPosition, digLeftPosition, digRightPosition;
+	public BoxCollider2D digDownPosition, digLeftPosition, digRightPosition; // Get dig Positions from Character
+
+	public FeetController feetController;
 
 	void Start () {
 		r = GetComponent<Rigidbody2D>();
@@ -20,9 +21,9 @@ public class PlayerController : MonoBehaviour {
         float moveHorizontal = (Input.GetAxis("Horizontal") * speed);
         r.velocity = new Vector2(moveHorizontal, r.velocity.y);
 
-		if(Input.GetButton("Jump") && !isJumpLocked){
+		if(Input.GetButton("Jump") && feetController.canJump){
 			r.velocity = new Vector2(r.velocity.x, 15);
-			isJumpLocked = true;
+			feetController.canJump = false;
 		}
 
 		if(Input.GetButton("Fire1")){
@@ -36,13 +37,6 @@ public class PlayerController : MonoBehaviour {
 				destoryBlockRight();
 			}
 			
-		}
-	}
-
-    void OnTriggerEnter2D(Collider2D other){
-		Debug.Log("I just collided with " + other.ToString());
-		if(other.gameObject.CompareTag("JumpSurface")){
-			isJumpLocked = false;
 		}
 	}
 
